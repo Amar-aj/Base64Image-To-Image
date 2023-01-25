@@ -44,8 +44,8 @@ public class LocalFileStorageService
 
             string folderName = supportedFileType switch
             {
-                FileType.Image => Path.Combine("Images", folder, DateTime.Now.Year.ToString()),
-                _ => Path.Combine("Others", folder, DateTime.Now.Year.ToString()),
+                FileType.Image => Path.Combine("AppContent", "Images", folder),
+                _ => Path.Combine("AppContent", "Others", folder),
             };
             string pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
             Directory.CreateDirectory(pathToSave);
